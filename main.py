@@ -11,7 +11,7 @@ def main():
     config = get_config()
 
     # Extract
-    extractor = Extractor()
+    extractor = Extractor(config=config)
     raw_posts = extractor.fetch_posts()
     if not raw_posts:
         logging.error("No data extracted. Exiting.")
