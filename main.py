@@ -26,7 +26,7 @@ def main():
     loader = DataLoader(
         output_dir="data/output",
         partition_cols=["userId"],  # or None for non-partitioned
-        use_s3=False,                # set to False for local, True for S3
+        use_s3=os.getenv("USE_S3"),                # set to False for local, True for S3
         s3_bucket=os.getenv("AWS_S3_BUCKET"),
         s3_prefix="posts",
         aws_region=os.getenv("AWS_DEFAULT_REGION")
