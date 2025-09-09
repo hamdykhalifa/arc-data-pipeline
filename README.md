@@ -20,7 +20,7 @@ Extracts, transforms, and loads JSONPlaceholder “posts” data to Parquet file
 ## Setup
 1. Clone and Install
 ```
-git clone https://github.com/yourusername/arc-data-pipeline.git
+git clone https://github.com/hamdykhalifa/arc-data-pipeline.git
 cd arc-data-pipeline
 python -m venv venv
 source venv/bin/activate
