@@ -1,5 +1,7 @@
-import pandas as pd
+import os
 import json
+
+import pandas as pd
 
 def generate_data_quality_report(df: pd.DataFrame, key_column="id"):
     report = {}
@@ -21,5 +23,6 @@ def generate_data_quality_report(df: pd.DataFrame, key_column="id"):
     return report
 
 def save_quality_report(report, output_path="data/output/data_quality_report.json"):
+    os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as f:
         json.dump(report, f, indent=2)
