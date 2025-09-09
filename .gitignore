@@ -1,0 +1,73 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+pip-wheel-metadata/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Pytest cache
+.cache/
+.pytest_cache/
+
+# mypy/mypy cache
+.mypy_cache/
+.dmypy.json
+
+# Coverage reports
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Editable installs
+*.egg-info/
+dist/
+build/
+eggs/
+
+# Log files
+*.log
+
+# Data files (local output, never upload source or results)
+data/
+!data/.gitkeep
+
+# Sensitive files
+.env
+.env.*
+secrets.*
+*.pem
+*.key
+
+# S3/Cloud artifacts
+*.parquet
+*.pq
+*.csv
+*.json
+
+# Docker
+*.dockerignore
+Dockerfile
+
+# Editor/IDE stuff
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Mac/Win nonsense
+.DS_Store
+Thumbs.db
+
+# Misc
+*.bak
+*.tmp
+*.swp
