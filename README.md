@@ -1,6 +1,8 @@
 # Arc Data Pipeline
+
 A lightweight, production-grade, containerized ETL pipeline using Python and Docker.
 Extracts, transforms, and loads JSONPlaceholder “posts” data to Parquet files locally or to S3, with partitioning and data quality reporting.
+
 ---
 
 ## Features
@@ -12,6 +14,7 @@ Extracts, transforms, and loads JSONPlaceholder “posts” data to Parquet file
 - Local or S3 loading (toggle by config)
 - Logging, error handling, unit tests
 - Dockerized for reproducibility
+
 ---
 
 ## Setup
