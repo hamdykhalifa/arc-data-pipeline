@@ -28,16 +28,19 @@ pip install -r requirements.txt
 ```
 
 2. Configure Environment Variables
-Copy .env.example to .env and fill in your values.
+Create an .env and fill in your values.
 
 ```
 # .env
 API_BASE_URL=https://jsonplaceholder.typicode.com/posts
 USE_S3=False                # Set to True for S3 write
-S3_BUCKET=your-s3-bucket    # Required if USE_S3=True
+AWS_S3_BUCKET=your-s3-bucket    # Required if USE_S3=True
 AWS_ACCESS_KEY_ID=...
 AWS_SECRET_ACCESS_KEY=...
-AWS_DEFAULT_REGION=us-east-1
+AWS_DEFAULT_REGION=eu-north-1
+S3_PREFIX=posts
+OUTPUT_DIR=data/output 
+PARTITION_COLS=userId
 ```
 ---
 
