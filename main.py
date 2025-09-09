@@ -1,5 +1,6 @@
 import logging, os
 from config.logging_config import setup_logging
+from config.config import get_config
 from etl.extract import Extractor
 from etl.transform import Transformer
 from etl.load import DataLoader
@@ -7,6 +8,7 @@ from etl.quality import generate_data_quality_report, save_quality_report
 
 def main():
     setup_logging()
+    config = get_config()
 
     # Extract
     extractor = Extractor()
@@ -24,12 +26,12 @@ def main():
 
     # Load
     loader = DataLoader(
-        output_dir="data/output",
-        partition_cols=["userId"],  # or None for non-partitioned
-        use_s3=os.getenv("USE_S3"),                # set to False for local, True for S3
-        s3_bucket=os.getenv("AWS_S3_BUCKET"),
-        s3_prefix="posts",
-        aws_region=os.getenv("AWS_DEFAULT_REGION")
+        output_dir=config["OUTPUT_DIR"],
+        partition_cols=config["PARTITION_COLS"],
+        use_s3=config["USE_S3"],
+        s3_bucket=config["AWS_S3_BUCKET"],
+        s3_prefix=config["S3_PREFIX"],
+        aws_region=config["AWS_REGION"]
     )
     output_file = loader.save(df)
     logging.info(f"Pipeline complete. Data saved to {output_file}")
